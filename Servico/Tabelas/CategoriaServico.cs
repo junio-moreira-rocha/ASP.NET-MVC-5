@@ -16,5 +16,10 @@ namespace Servico.Tabelas
         {
             return categoriaDAL.ObterCategoriasClassificadasPorNome();
         }
+
+        public Categoria ObterCategoriaPorId(long id)
+        {
+            return categoriaDAL.
+        }
     }
 }

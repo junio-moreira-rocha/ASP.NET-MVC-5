@@ -1,5 +1,7 @@
 ﻿using Modelo.Tabelas;
 using Projeto01.Contexts;
+using Servico.Cadastros;
+using Servico.Tabelas;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
@@ -9,12 +11,14 @@ namespace Projeto01.Controllers
 {
     public class CategoriasController : Controller
     {
-        private EFContext context = new EFContext();
+        private CategoriaServico categoriaServico = new CategoriaServico();
+        private ProdutoServico produtoServico = new ProdutoServico();
+        private FabricanteServico fabricanteServico = new FabricanteServico();
 
         [HttpGet]
         public ActionResult Index()
         {
-            return View(context.Categorias.OrderBy(c => c.Nome));
+            return View(categoriaServico.ObterCategoriasClassificadasPorNome());
         }
 
         [HttpGet]
@@ -99,6 +103,15 @@ namespace Projeto01.Controllers
             context.SaveChanges();
             TempData["Message"] = "Categoria " + categoria.Nome.ToUpper() + " foi removida";
             return RedirectToAction("Index");
+        }
+
+        private ActionResult ObterVisaoCategoriaPorId(long? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Categoria categoria = categoriaServico.
         }
     }
 }
