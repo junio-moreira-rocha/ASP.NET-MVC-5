@@ -7,7 +7,7 @@ namespace Modelo.Cadastros
     public class Fabricante
     {
         [DisplayName("Fabricante Id")]
-        public long FabricanteId { get; set; }
+        public long? FabricanteId { get; set; }
 
         [DisplayName("Fabricante Nome")]
         public string Nome { get; set; }

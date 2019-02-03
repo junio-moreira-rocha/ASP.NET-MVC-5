@@ -1,4 +1,4 @@
-﻿@model Projeto01.Models.Fabricante
+﻿@model Modelo.Cadastros.Fabricante
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Alterando os dados de um Fabricante";
@@ -8,7 +8,7 @@
     @Html.AntiForgeryToken()
     <div class="panel panel-primary">
         <div class="panel-heading">
-            Alteração dos dados de um FABRICANTE
+            Alteração dos dados de um Fabricante
         </div>
         <div class="panel-body">
             <div class="form-horizontal">
@@ -25,7 +25,7 @@
             <div class="panel-footer panel-info">
                 <div class="col-md-offset-2 col-md-10">
                     <input type="submit" value="Gravar alterações" class="btn btn-info" />
-                    @Html.ActionLink("Retornar para a listagem de FABRICANTES", "Index", null, new { @class = "btn btn-warning" })
+                    @Html.ActionLink("Retornar para a listagem de Fabricantes", "Index", null, new { @class = "btn btn-warning" })
                 </div>
                 <br />
                 <br />
